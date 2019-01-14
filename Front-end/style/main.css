@@ -1,0 +1,13 @@
+body {
+    background-color: crimson;
+    color: whitesmoke;
+}
+
+.panel {
+    width: 100%;
+    height: 500px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: darkslategrey;
+    border: 2px solid red;
+}
