@@ -8,7 +8,9 @@
     <title>Document</title>
 </head>
 <?php
-require_once("main.php");  
+require_once("main.php");
+require_once("util/dbManager.php");
+require_once("model/User.php");  
 ?>
 <body>
 <div class="container">
