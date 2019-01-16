@@ -6,7 +6,7 @@
         $userName = strtolower ($_POST['username']);
         $msg = $_POST['password'];
         $usuario = $_POST['username'];
-
+        $success = TRUE;
         
         
 
