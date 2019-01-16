@@ -7,12 +7,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Document</title>
 </head>
+<?php
+require_once("main.php");
+require_once("util/dbManager.php");
+require_once("model/User.php");  
+?>
 <body>
 <div class="container">
   <form>
     <div class="form-group">
       <input type="text" class="form-control" id="usr">
-      <button type="button" class="btn btn-primary">Submmit</button>
+      <button type="submit" name="submit" class="btn btn-primary">Submmit</button>
     </div>
 </div>
 </body>
