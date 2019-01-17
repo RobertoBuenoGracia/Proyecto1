@@ -5,6 +5,7 @@
     if (isset($_POST['submit'])){
         $msg = $_POST['msg'];
         $usuario = $_POST['username'];
+        if($msg != NULL && $usuario != NULL ){
         $success = TRUE;
 
         if($success){
@@ -20,5 +21,8 @@
                 }
             }
         }
+    }else{
+        echo"eres subnormal o que te pasa no lo dejes vacio";
     }
+}
 ?>
