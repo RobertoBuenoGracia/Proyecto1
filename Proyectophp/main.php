@@ -12,7 +12,13 @@
             $user->user = $usuario;
             $user->msg = $msg; 
             $success = insertUserObject ($user);
-            mostrar();
+            $data = mostrar();
+            if($data != null){
+                foreach($data as $value){
+                    echo '<h1>Name:'.$value['user'].'</h1>';
+                    echo '<h1>Message:'.$value['msg'].'</h1>';
+                }
+            }
         }
     }
 ?>

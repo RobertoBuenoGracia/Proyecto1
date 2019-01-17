@@ -19,7 +19,7 @@
         }
             $conn = null;
     }
-
+     
     function mostrar(){
         try{
             $servername = "localhost";
@@ -27,11 +27,12 @@
             $password   = "";
             $db         = 'copia_twitter';
             $conn       = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
-
+            
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = $conn->prepare("Select user, msg from information" );
-            $stmt->execute();
-            return true;
+            $stmt = "Select user, msg from information";
+            $result = $conn->query($stmt);
+            $conn->exec($stmt);
+            return $result;
         }catch(PDOException $e)
         {
             echo $sql . "<br>" . $e->getMessage();
