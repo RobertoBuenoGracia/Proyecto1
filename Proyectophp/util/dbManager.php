@@ -20,7 +20,7 @@
             $conn = null;
     }
 
-    /*function mostrar(){
+    function mostrar(){
         try{
             $servername = "localhost";
             $username   = "root";
@@ -38,7 +38,5 @@
             return false;
         }
             $conn = null;
-    }
-    }
-    
-?>*/
+    }  
+?>
