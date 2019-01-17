@@ -31,10 +31,6 @@
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $stmt = $conn->prepare("Select user, msg from information" );
             $stmt->execute();
-            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
-                echo $v;
-            }
             return true;
         }catch(PDOException $e)
         {
