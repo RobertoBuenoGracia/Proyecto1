@@ -14,11 +14,13 @@ require_once("model/User.php");
 ?>
 <body>
 <div class="container">
-  <form>
+  <form action="#" method="$_POST">
     <div class="form-group">
-      <input type="text" class="form-control" id="usr">
+      <input type="text" class="form-control" id="username">
+      <input type="text" class="form-control" id="msg">
       <button type="submit" name="submit" class="btn btn-primary">Submmit</button>
     </div>
+    </form>
 </div>
 </body>
 </html>
