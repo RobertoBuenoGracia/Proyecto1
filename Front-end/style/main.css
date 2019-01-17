@@ -1,5 +1,5 @@
 body {
-    background-color: crimson;
+    background-image: url("../img/background.jpg");
     color: whitesmoke;
 }
 
@@ -8,6 +8,12 @@ body {
     height: 500px;
     margin-left: 20px;
     margin-right: 20px;
-    background-color: darkslategrey;
-    border: 2px solid red;
+    background-color: black;
+    border: 2px solid lightskyblue;
 }
+
+.logo {
+    background-color: whitesmoke;
+    color: lightskyblue;
+}
+
