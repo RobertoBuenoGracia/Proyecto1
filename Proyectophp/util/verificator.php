@@ -3,6 +3,10 @@
         return ($info == "" || $info == "&nbsp;" || $info == " ");
     }
     
+    function familyfriendliy($value){
+        return ($value == "marica" || $value == "hijo de puta" || $value == "puta" || $value == "puto" || $value == "cabron" || $value == "retrasado" || $value == "Abanto" || $value == "Abrazafarolas" || $value == "Adufe" || $value == "Alcornoque" || $value == "Alfeñique" || $value == "Andurriasmo" || $value == "Artabán" || $value == "coño" || $value == "pene" || $value == "polla" || $value == "chupamela" || $value == "rabo" || $value == "atarre" || $value == "baboso" || $value == "barrabás" || $value == "bellaco" || $value == "pichacorta" || $value == "picha" || $value == "barriobajero" || $value == "besugo" || $value == "bobo" || $value == "boba" || $value == "tonto" || $value == "tonta" || $value == "retrasada" || $value == "bocabuzón" || $value == "muerde almuhada" || $value == "bocallanta" || $value == "bocachancla" || $value == "carapijo" || $value == "caracaballo" || $value == "carajote" || $value == "lameculos" || $value == "cuerpoescombro" || $value == "morroestufa" || $value == "pagafantas" || $value == "tolai" || $value == "perroflauta" || $value == "parguela" || $value == "cenutrio" || $value == "melón" || $value == "tocapelotas" ||);
+    }
+
     function checkpasswords ($password){
         /* RETORNA verdadero si se cumplen las condiciones de cada función */
         if (checkLength ($password) && 
