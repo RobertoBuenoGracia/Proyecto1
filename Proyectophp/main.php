@@ -11,7 +11,7 @@
         $msg_comparator = strtolower($msg);
         $usuario_comparator = strtolower($usuario);
         if( !isEmpty($msg_comparator) &&  !isEmpty($usuario_comparator) ){
-            split( string $msg_comparator);
+            split( string $msg_comparator): array;
             if(!familyfriendliy($msg_comparator) ){
                 $success = TRUE;
                 if($success){
