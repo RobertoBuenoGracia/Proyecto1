@@ -1,4 +1,8 @@
-<?php 
+<?php
+    function isEmpty ($info){
+        return ($info == "" || $info == "&nbsp;" || $info == " ");
+    }
+    
     function checkpasswords ($password){
         /* RETORNA verdadero si se cumplen las condiciones de cada función */
         if (checkLength ($password) && 
