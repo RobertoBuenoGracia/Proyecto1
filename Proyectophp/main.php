@@ -11,8 +11,7 @@
         $msg_comparator = strtolower($msg);
         $usuario_comparator = strtolower($usuario);
         if( !isEmpty($msg_comparator) &&  !isEmpty($usuario_comparator) ){
-            split( string $msg_comparator): array;
-            if(!familyfriendliy($msg_comparator) ){
+            
                 $success = TRUE;
                 if($success){
                     $user = new User();
@@ -26,7 +25,7 @@
                             echo '<h1>Message:'.$value['msg'].'</h1>';
                         }
                     }
-                }
+                
             }
         }else{
             echo"eres subnormal o que te pasa no lo dejes vacio";
