@@ -7,6 +7,11 @@
     <link rel="stylesheet" type="text/css" href="style\hover.css">
     <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
 </head>
+<?php
+require_once("main.php");
+require_once("util/dbManager.php");
+require_once("model/User.php");  
+?>
 <body>
     <div class="container-fluid">
         <div class="row">
