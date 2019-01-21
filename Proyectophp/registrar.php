@@ -1,6 +1,5 @@
 <?php
     require_once('model/User.php');
-    require_once('utilities/validator.php');
     require_once('main.php');
 ?>
 
@@ -10,7 +9,7 @@
     <meta charset="utf-8" />
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style/main.css" >
+    <link rel="stylesheet" type="text/css" href="style/main1.css" >
 </head>
 <body>
 <div class="title1">

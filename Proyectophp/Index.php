@@ -11,7 +11,7 @@
     require_once("util/dbManager.php");
     require_once("model/User.php"); 
     require_once("util/verificator.php");
-    
+    header('Location: registrar.php');
     
     $data = mostrar();
     if (isset($_POST['submit'])){
