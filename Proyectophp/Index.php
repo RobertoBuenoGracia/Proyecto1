@@ -68,9 +68,6 @@
             <div class="row">
                 <div class="col-sm-8 text-center">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h1>Panel Heading</h1>
-                        </div>
                         <div class="panel-body">
                             <div class="div-msg div-scroll upper_part2 btn-5" >
                                     <?php
@@ -90,7 +87,9 @@
                     <h1> FORM </h1>
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                                 <div class="form-group">
-                                <a href="sign_up.php"><span class="glyphicon glyphicon-user"></span> Login/</a><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Sign Up</a>
+                                    <div class="div-scroll  btn-5" >
+                                        <a href="sign_up.php"><span class="glyphicon glyphicon-user"></span> Login/</a><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Sign Up</a>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="comment">Comment:</label>
