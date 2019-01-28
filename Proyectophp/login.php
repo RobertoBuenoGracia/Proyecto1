@@ -25,12 +25,8 @@
       <div class="col-sm-12"> 
         <br>
         <h4>Nombre de Usuario:</h4> <input type="text" name="username">
-        <br>
-        <span class="text-danger"><?php echo $usernameErr;?></span>
         <br><br><br>
         <h4>Contraseña:</h4> <input type="text" name="password" >
-        <br>
-        <span class="text-danger"><?php echo $passwordErr;?></span>
         <br><br><br>
         <input type="submit" class="btn btn-default" name="submit" value="Login">
       </div>
