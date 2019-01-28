@@ -12,10 +12,46 @@
         if (checkLength ($password) && 
             checkNumbers ($password) &&
             checkLetters ($password) &&
-            checkSpecialCharacters ($password)){
+            $password !=null){
                 return true;
             }
                 return false;
+    }
+
+    function validate_name($name){
+        if($name !=null){
+            if(preg_match('/^[a-zA-Z ]*$/',$name)){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
+
+    function validate_surname($surname){
+        if($surname !=null){
+            if(preg_match('/^[a-zA-Z ]*$/',$surname)){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
+
+    function validate_email($email){
+        if($email !=null){
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            return false;
+        }else{
+            return true;
+        }
+    }else{
+        return false;
+    }
     }
 
     function checkLength ($password){

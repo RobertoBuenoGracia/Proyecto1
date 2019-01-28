@@ -1,71 +1,82 @@
 <?php
-$santi = 'Dios de todo';
-$name_err = $surname_err = $dni_err = $email_err = $phone_err = "";
+require_once('util/verificator.php');
+require_once("util/dbManager.php");
+require_once("model/User.php"); 
+$name_err = $surname_err = $dni_err = $email_err = $password_err = $password2_err = "";
 if (isset($_POST['submit'])){
 
-    $name_error = validate_name($_POST['Name']);
-    
-    $surname_error = validate_surname($_POST['Surname']);
+    $password = $_POST['password'];
 
-    $dni_error = validate_dni($_POST["Dni"]);
+    $password2 = $_POST['password2'];
+
+    $name = $_POST['name'];
+
+    $surname = $_POST['surname'];
+
+    $username = $_POST['username'];
+
+    $email = $_POST['email'];
+
+    $name_error = validate_name($_POST['name']);
+    
+    $surname_error = validate_surname($_POST['surname']);
    
-    $email_error = validate_email($_POST['Email']);
+    $email_error = validate_email($_POST['email']);
 
-    $phone_error = validate_phone($_POST['phone']);
+    $phone_error = checkpasswords($_POST['password']);
 
-    if($name_error == 1){
+    if($name_error){
         global $name_err;
-        $name_err = 'Campo nulo';
-    }elseif($name_error == 2){
+        $name_err = '';
+    }else
+    {
         global $name_err;
-        $name_err = 'Solo letras';
+        $name_err = 'Insercion erronea de tu nombre';
     }
 
-    if($surname_error == 1){
+    if($surname_error){
         global $surname_err;
-        $surname_err = 'Campo nulo';
-    }elseif($surname_error == 2){
+        $surname_err = '';
+    }else{
         global $surname_err;
-        $surname_err = 'Solo letras';
+        $surname_err = 'Insercion erronea de tu apellido';
     }
 
-    if($dni_error == 1){
-        global $dni_err;
-        $dni_err = 'Campo nulo';
-    }elseif($dni_error == 2){
-        global $dni_err;
-        $dni_err = 'formmato incorrecto';
-    }
+    
 
-    if($email_error == 1){
+    if($email_error){
         global $email_err;
-        $email_err = 'Campo nulo';
-    }elseif($email_error == 2){
+        $email_err = '';
+    }else{
         global $email_err;
-        $email_err = 'formato incorrecto';
+        $email_err = 'Insercion erronea de tu email';
     }
 
-    if($phone_error == 1){
-        global $phone_err;
-        $phone_err = 'Campo nulo';
-    }elseif($phone_error == 2){
-        global $phone_err;
-        $phone_err = 'Solo numero';
+    if($phone_error){
+        global $password_err;
+        $password_err = '';
+    }else{
+        global $password_err;
+        $password_err = 'Insercion erronea de tu password';
     }
     
-    if($name_error == 0 && $surname_error == 0 && $dni_error == 0 && $email_error == 0 && $phone_error == 0){
-        $user = new User();
-        $user->name = $_POST['Name'];
-        $user->surname = $_POST['Surname'];
-        $user->dni = $_POST["Dni"];
-        $user->email = $_POST['Email'];
-        $user->phone = $_POST['Email'];
-        echo "<style>.title1{opacity: 0;}</style>";
-        $user->showInfo();
-        if($user->name == "Santi"){
-            echo $santi;
-        }
+    if($password == $password2){
+        global $password2_err;
+        $password2_err = "";
+    }else{
+        global $password2_err;
+        $password2_err = "No coincide la contraseña";
     }
+     if($password2_err == "" && $password_err == "" && $email_err == "" && $surname_err == "" && $name_err == "" ){
+        $usuario = new usuario();
+        $usuario->name = $name;
+        $usuario->surname = $surname;
+        $usuario->password = $password;
+        $usuario->username = $username;
+        $usuario->email = $email;
+        $success = insertUserObject ($usuario);
+        header('Location: login.php');
+     }
 }
      
 ?>

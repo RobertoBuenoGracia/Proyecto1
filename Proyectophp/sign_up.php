@@ -6,6 +6,11 @@
     <link rel="stylesheet" type="text/css" href="style\main.css">
     <link rel="stylesheet" type="text/css" href="style\hover.css">
 </head>
+
+<?php
+require_once('main.php');
+?>
+
 <body>  
 <center>
 <nav class="navbar navbar-inverse">
@@ -19,28 +24,27 @@
 <div class="jumbotron text-center">
 <h2>Sign Up Icsitter</h2>
 </div>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+<form method="post" action="#"> 
   <div class="container">
     <div class="row">
       <div class="col-sm-4"> 
         <br>
-        <h4>Nombre</h4><input type="text" name="name"><h4>Apellidos:</h4><input type="text" name="surname">
+        <h4>Nombre</h4><input style="color:black;" type="text" name="name" value="lol"><br><?php echo $name_err?>
+        <h4>Apellidos:</h4><input style="color:black;" type="text" name="surname" value="lol"><br><?php echo $surname_err?>
         <br><br><br>
-        <h4>Nombre De Usuario:</h4> <input type="text" name="username" >
-        <br><br><br>
-      </div>
-      <div class="col-sm-4">
-        <br>
-        <h4>E-mail:</h4> <input type="text" name="email">
-        <br><br><br>
-        <h4>Contraseña:</h4> <input type="text" name="password" >
+        <h4>Nombre De Usuario:</h4> <input style="color:black;" type="text" name="username" value="lol" >
         <br><br><br>
       </div>
       <div class="col-sm-4">
         <br>
-        <h4>Verificar Contraseña:</h4> <input type="text" name="repeat_password">
+        <h4>E-mail:</h4> <input style="color:black;" type="text" name="email" value="loljoj@hotmail.com"><br><?php echo $email_err?>
         <br><br><br>
-        <h4>- Fecha de nacimiento:</h4> <input type="text" name="birthdate" placeholder="DD/MM/YYYY">
+        <h4>Contraseña:</h4> <input style="color:black;" type="text" name="password" value="poncert123" ><br><?php echo $password_err?>
+        <br><br><br>
+      </div>
+      <div class="col-sm-4">
+        <br>
+        <h4>Verificar Contraseña:</h4> <input style="color:black;" type="text" name="password2" value="poncert123"><br><?php echo $password2_err?>
         <br><br><br>
       </div>
     </div>
