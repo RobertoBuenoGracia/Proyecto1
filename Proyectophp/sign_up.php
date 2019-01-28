@@ -39,8 +39,6 @@
       <div class="col-sm-4">
         <br>
         <h4>Verificar Contraseña:</h4> <input type="text" name="repeat_password">
-        <br>
-        <span class="text-danger"><?php echo $repeat_passwordErr;?></span>
         <br><br><br>
         <h4>- Fecha de nacimiento:</h4> <input type="text" name="birthdate" placeholder="DD/MM/YYYY">
         <br><br><br>
