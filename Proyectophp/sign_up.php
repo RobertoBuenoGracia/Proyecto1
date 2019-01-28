@@ -24,25 +24,16 @@
     <div class="row">
       <div class="col-sm-4"> 
         <br>
-        <h4>Nombre Y Apellidos:</h4><input type="text" name="name">
-        <br>
-        <span class="text-danger"><?php echo $nameErr;?></span>
+        <h4>Nombre</h4><input type="text" name="name"><h4>Apellidos:</h4><input type="text" name="surname">
         <br><br><br>
         <h4>Nombre De Usuario:</h4> <input type="text" name="username" >
-        <br>
-        <span class="text-danger"><?php echo $usernameErr;?></span>
         <br><br><br>
       </div>
       <div class="col-sm-4">
         <br>
         <h4>E-mail:</h4> <input type="text" name="email">
-        <br>
-        <span class="text-danger"><?php echo $emailErr;?></span>
         <br><br><br>
         <h4>Contraseña:</h4> <input type="text" name="password" >
-        <br>
-        <span class="text-danger">
-        <?php echo $passwordErr;?></span>
         <br><br><br>
       </div>
       <div class="col-sm-4">
@@ -52,9 +43,6 @@
         <span class="text-danger"><?php echo $repeat_passwordErr;?></span>
         <br><br><br>
         <h4>- Fecha de nacimiento:</h4> <input type="text" name="birthdate" placeholder="DD/MM/YYYY">
-        <br>
-        <span class="text-danger">
-        <?php echo $birthdateErr;?></span>
         <br><br><br>
       </div>
     </div>

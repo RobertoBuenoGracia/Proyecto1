@@ -90,8 +90,7 @@
                     <h1> FORM </h1>
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                                 <div class="form-group">
-                                    <label for="usr">Username:</label>
-                                    <input type="text" class="form-control btn-5" id="usr" name="username">
+                                <a href="sign_up.php"><span class="glyphicon glyphicon-user"></span> Login/</a><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Sign Up</a>
                                 </div>
                                 <div class="form-group">
                                     <label for="comment">Comment:</label>
