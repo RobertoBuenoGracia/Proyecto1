@@ -15,6 +15,3 @@ CREATE TABLE messages (
     user_id int,
     FOREIGN KEY (user_id) REFERENCES usuario(id)
 );
-
-/* QUERY */
-
