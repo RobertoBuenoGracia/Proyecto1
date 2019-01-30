@@ -1,3 +1,6 @@
+<?php
+session_start(); 
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,17 +18,15 @@
     $data = mostrar();
     if (isset($_POST['submit'])){
         $msg = $_POST['msg'];
-        $usuario = $_POST['username'];
         $msg_comparator = strtolower($msg);
-        $usuario_comparator = strtolower($usuario);
-        if( !isEmpty($msg_comparator) &&  !isEmpty($usuario_comparator) ){
-            
+        echo $_SESSION["usuario"];
+        if(!isEmpty($_SESSION["usuario"]) &&  !isEmpty($msg) ){
                 $success = TRUE;
                 if($success){
                     $user = new User();
-                    $user->user = $usuario;
+                    $user->user = $_SESSION["usuario"];
                     $user->msg = $msg; 
-                    $success = insertUserObject ($user);
+                    $success = insertmsgObject ($user);
                     $data = mostrar();
                     }
                 
@@ -73,7 +74,7 @@
                                     <?php
                                         
                                             foreach($data as $value){
-                                                echo '<h5 class="Felix Rober">&nbsp&nbsp'.$value['user'].':</h5>';
+                                                echo '<h5 class="Felix Rober">&nbsp&nbsp'.$value['user_id'].':</h5>';
                                                 echo '<h5 class="Felix" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="Rober">'.$value['msg'].'</span></h5>';
                                             } 
                                     

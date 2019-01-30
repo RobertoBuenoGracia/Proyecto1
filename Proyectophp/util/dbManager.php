@@ -29,9 +29,11 @@
             $conn       = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
 
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO messages (user_id, msg)VALUES ('$user->user', '$user->msg');";
-            $conn->exec($sql);
-            return true;
+            $sql = "SELECT user_names, passwords FROM usuario WHERE user_names='$username1' and passwords='$password1';";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $row;
         }catch(PDOException $e)
         {
             echo $sql . "<br>" . $e->getMessage();
@@ -79,5 +81,26 @@
             return false;
         }
             $conn = null;
-    }  
+    }
+    
+    function mostrar_id($username1){
+        try{
+            $servername = "localhost";
+            $username   = "root";
+            $password   = "";
+            $db         = 'copia_twitter';
+            $conn       = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
+            
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $stmt = "Select id from usuario where user_names='$username1'";
+            $row= $conn->prepare($stmt);
+            $row->execute();
+            $string = $row->fetch(PDO::FETCH_COLUMN);
+            return $string;
+        }catch(PDOException $e)
+        {
+            return false;
+        }
+            $conn = null;
+    }
 ?>
