@@ -1,0 +1,3 @@
+SELECT usuario.user_names, messages.user_id 
+FROM usuario 
+INNER JOIN messages ON usuario.id = messages.id;
