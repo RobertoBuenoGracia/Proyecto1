@@ -16,11 +16,16 @@ session_start();
     require_once("util/verificator.php");
     
     $data = mostrar();
+    if(isset($_POST["logoff"])){
+        session_unset(); 
+        session_destroy();
+        echo "session cerrada";
+    }
     if (isset($_POST['submit'])){
         $msg = $_POST['msg'];
         $msg_comparator = strtolower($msg);
-        echo $_SESSION["usuario"];
-        if(!isEmpty($_SESSION["usuario"]) &&  !isEmpty($msg) ){
+
+        if(isset($_SESSION["usuario"]) &&  !isEmpty($msg) ){
                 $success = TRUE;
                 if($success){
                     $user = new User();
@@ -28,11 +33,11 @@ session_start();
                     $user->msg = $msg; 
                     $success = insertmsgObject ($user);
                     $data = mostrar();
-                    }
+                }
                 
             
         }else{
-            echo"eres subnormal o que te pasa no lo dejes vacio";
+            echo"el mensaje esta vacio o no estas logeado";
         }
 }
 ?>
@@ -74,7 +79,7 @@ session_start();
                                     <?php
                                         
                                             foreach($data as $value){
-                                                echo '<h5 class="Felix Rober">&nbsp&nbsp'.$value['user_id'].':</h5>';
+                                                echo '<h5 class="Felix Rober">&nbsp&nbsp'.$value['user_names'].':</h5>';
                                                 echo '<h5 class="Felix" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="Rober">'.$value['msg'].'</span></h5>';
                                             } 
                                     
@@ -88,21 +93,20 @@ session_start();
                     <h1> FORM </h1>
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                                 <div class="form-group">
-                                    <div class="dropdown">
-                                    <button class="div-scroll  btn-5 dropdown-toggle" type="button" data-toggle="dropdown">User Options</button>
-                                    <ul class="dropdown-menu">
-                                    <li><a href="sign_up.php"><span class="glyphicon glyphicon-user"></span> Login </a></li>
-                                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Sign Up</a></li>
-                                    <li><a href="#">><span class="glyphicon glyphicon-share-alt"></span> Log Out </a></li>
-                                    </ul>
+                                    <div class="div-scroll  btn-5" >
+                                        <a href="sign_up.php"><span class="glyphicon glyphicon-user"></span> Login/</a><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Sign Up</a>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="comment">Comment:</label>
                                     <textarea class="form-control btn-5" rows="5" id="comment" name="msg"></textarea>
                                     <hr>
+                                    
                                     <button  class="btn btn-5" type="submit" name="submit">SEND</button>  
                                 </div>
+                    </form>
+                    <form action="#" method="POST">
+                    <button  class="btn btn-5" type="submit" name="logoff">logoff</button>
                     </form>
                 </div>
             </div>

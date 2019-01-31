@@ -71,13 +71,13 @@
             $conn       = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
             
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = "Select user_id, msg from messages";
+            $stmt = "SELECT usuario.user_names, messages.msg FROM usuario RIGHT JOIN messages ON usuario.id = messages.user_id;";
             $result = $conn->query($stmt);
             $conn->exec($stmt);
             return $result;
         }catch(PDOException $e)
         {
-            echo $sql . "<br>" . $e->getMessage();
+            
             return false;
         }
             $conn = null;
