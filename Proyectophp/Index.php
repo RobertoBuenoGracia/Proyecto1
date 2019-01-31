@@ -88,8 +88,13 @@ session_start();
                     <h1> FORM </h1>
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                                 <div class="form-group">
-                                    <div class="div-scroll  btn-5" >
-                                        <a href="sign_up.php"><span class="glyphicon glyphicon-user"></span> Login/</a><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Sign Up</a>
+                                    <div class="dropdown">
+                                    <button class="div-scroll  btn-5 dropdown-toggle" type="button" data-toggle="dropdown">User Options</button>
+                                    <ul class="dropdown-menu">
+                                    <li><a href="sign_up.php"><span class="glyphicon glyphicon-user"></span> Login </a></li>
+                                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Sign Up</a></li>
+                                    <li><a href="#">><span class="glyphicon glyphicon-share-alt"></span> Log Out </a></li>
+                                    </ul>
                                     </div>
                                 </div>
                                 <div class="form-group">
