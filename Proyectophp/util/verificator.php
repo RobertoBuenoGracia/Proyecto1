@@ -21,36 +21,36 @@
     function validate_name($name){
         if($name !=null){
             if(preg_match('/^[a-zA-Z ]*$/',$name)){
-                return true;
+                return 1;
             }else{
-                return false;
+                return 2;
             }
         }else{
-            return false;
+            return 0;
         }
     }
 
     function validate_surname($surname){
         if($surname !=null){
             if(preg_match('/^[a-zA-Z ]*$/',$surname)){
-                return true;
+                return 1;
             }else{
-                return false;
+                return 2;
             }
         }else{
-            return false;
+            return 0;
         }
     }
 
     function validate_email($email){
         if($email !=null){
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            return false;
+            return 2;
         }else{
-            return true;
+            return 1;
         }
     }else{
-        return false;
+        return 0;
     }
     }
 

@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
   if($data > 0){
     echo "perfecto";
     $_SESSION["usuario"] = mostrar_id($username1);
-    header('Location: Index.php');
+    header('Location: registrado.php');
     exit();
   }else{
     echo "usuario o contraseña erroneo";

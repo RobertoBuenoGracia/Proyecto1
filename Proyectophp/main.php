@@ -23,41 +23,47 @@ if (isset($_POST['submit'])){
    
     $email_error = validate_email($_POST['email']);
 
-    $phone_error = checkpasswords($_POST['password']);
+    $password_error = checkpasswords($_POST['password']);
 
-    if($name_error){
+    if($name_error == 1){
         global $name_err;
         $name_err = '';
-    }else
+    }elseif($name_error == 0)
     {
         global $name_err;
-        $name_err = 'Insercion erronea de tu nombre';
+        $name_err = 'No deje el campo vacio';
+    }elseif($name_error == 2){
+        $name_err = 'El nombre solo puede contener letras';
     }
 
-    if($surname_error){
+    if($surname_error == 1){
         global $surname_err;
         $surname_err = '';
-    }else{
+    }elseif($surname_error == 0){
         global $surname_err;
-        $surname_err = 'Insercion erronea de tu apellido';
+        $surname_err = 'No deje el campo vacio';
+    }elseif($surname_error == 2){
+        $surname_err = 'El apellido solo puede contener letras';
     }
 
     
 
-    if($email_error){
+    if($email_error == 1){
         global $email_err;
         $email_err = '';
-    }else{
+    }elseif($email_error == 0){
         global $email_err;
-        $email_err = 'Insercion erronea de tu email';
+        $email_err = 'No deje el campo vacio';
+    }elseif($email_error == 2){
+        $email_err = 'Email que ha incertado incorrecto';
     }
 
-    if($phone_error){
+    if($password_error){
         global $password_err;
         $password_err = '';
     }else{
         global $password_err;
-        $password_err = 'Insercion erronea de tu password';
+        $password_err = 'Recuerde que la contraseña debe tener una logintud minima de 8 digitos , contener numeros y letras';
     }
     
     if($password == $password2){

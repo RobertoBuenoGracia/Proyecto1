@@ -16,7 +16,31 @@ session_start();
     require_once("util/verificator.php");
     
     $data = mostrar();
+    if(isset($_POST["logoff"])){
+        session_unset(); 
+        session_destroy();
+        echo "session cerrada";
+        header('Location: Index.php');
+    }
+    if (isset($_POST['submit'])){
+        $msg = $_POST['msg'];
+        $msg_comparator = strtolower($msg);
 
+        if(isset($_SESSION["usuario"]) &&  !isEmpty($msg) ){
+                $success = TRUE;
+                if($success){
+                    $user = new User();
+                    $user->user = $_SESSION["usuario"];
+                    $user->msg = $msg; 
+                    $success = insertmsgObject ($user);
+                    $data = mostrar();
+                }
+                
+            
+        }else{
+            echo"el mensaje esta vacio o no estas logeado";
+        }
+}
 ?>
     <body>
         <div class="col-md-12 upper_part">
@@ -69,11 +93,18 @@ session_start();
                 <div class="col-sm-4 text-center">
                     <h1> FORM </h1>
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                        <button class="btn btn-5"  type="submit" name="logoff" >Logoff</button>
+                    </form>
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                                 <div class="form-group">
-                                    <div class="div-scroll  btn-5" >
-                                        <a href="login.php"><span class="glyphicon glyphicon-user"></span> Login/</a><a href="sign_up.php"><span class="glyphicon glyphicon-log-in"></span> Sign Up</a>
-                                    </div>
-                                </div> 
+                                </div>
+                                <div class="form-group">
+                                    <label for="comment">Comment:</label>
+                                    <textarea class="form-control btn-5" rows="5" id="comment" name="msg"></textarea>
+                                    <hr>
+                                    
+                                    <button  class="btn btn-5" type="submit" name="submit">SEND</button>  
+                                </div>
                     </form>
                 </div>
             </div>
