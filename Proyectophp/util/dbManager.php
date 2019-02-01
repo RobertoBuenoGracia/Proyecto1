@@ -71,7 +71,7 @@
             $conn       = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
             
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = "SELECT usuario.user_names, messages.msg FROM usuario RIGHT JOIN messages ON usuario.id = messages.user_id;";
+            $stmt = "SELECT usuario.user_names, messages.msg FROM usuario RIGHT JOIN messages ON usuario.id = messages.user_id ORDER BY usuario.user_names DESC;";
             $result = $conn->query($stmt);
             $conn->exec($stmt);
             return $result;

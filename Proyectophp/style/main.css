@@ -7,7 +7,12 @@ font-family: 'Kreon', serif;
 }
 @import url('https://fonts.googleapis.com/css?family=Kreon|Permanent+Marker');
 
-
+.Sing_up{
+  color:black;
+}
+.login{
+  color: black;
+}
 .Rober{
 color: cadetblue;
 }

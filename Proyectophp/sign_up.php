@@ -22,14 +22,14 @@ require_once('main.php');
   </div>
 </nav>
 <div class="jumbotron text-center">
-<h2>Sign Up Icsitter</h2>
+<h2 class="Sing_up">Sign Up Icsitter</h2>
 </div>
 <form method="post" action="#"> 
   <div class="container">
     <div class="row">
       <div class="col-sm-4"> 
         <br>
-        <h4>Nombre</h4><input style="color:black;" type="text" name="name" "><br><?php echo $name_err?>
+        <h4>Nombre</h4><input style="color:black;" type="text" name="name" ><br><?php echo $name_err?>
         <h4>Apellidos:</h4><input style="color:black;" type="text" name="surname" ><br><?php echo $surname_err?>
         <br><br><br>
         <h4>Nombre De Usuario:</h4> <input style="color:black;" type="text" name="username"  >
@@ -39,12 +39,12 @@ require_once('main.php');
         <br>
         <h4>E-mail:</h4> <input style="color:black;" type="text" name="email" ><br><?php echo $email_err?>
         <br><br><br>
-        <h4>Contraseña:</h4> <input style="color:black;" type="text" name="password"  ><br><?php echo $password_err?>
+        <h4>Contraseña:</h4> <input style="color:black;" type="password" name="password"  ><br><?php echo $password_err?>
         <br><br><br>
       </div>
       <div class="col-sm-4">
         <br>
-        <h4>Verificar Contraseña:</h4> <input style="color:black;" type="text" name="password2" ><br><?php echo $password2_err?>
+        <h4>Verificar Contraseña:</h4> <input style="color:black;" type="password" name="password2" ><br><?php echo $password2_err?>
         <br><br><br>
       </div>
     </div>

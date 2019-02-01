@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
   </div>
 </nav>
 <div class="jumbotron text-center">
-<h2>Login Icsitter</h2>
+<h2 class="login">Login Icsitter</h2>
 </div>
 <form method="post" action="#"> 
   <div class="container">
@@ -47,7 +47,7 @@ if(isset($_POST['submit'])){
         <br>
         <h4>Nombre de Usuario:</h4> <input style="color:black;" type="text" name="username1">
         <br><br><br>
-        <h4>Contraseña:</h4> <input style="color:black;" type="text" name="password1" >
+        <h4>Contraseña:</h4> <input style="color:black;" type="password" name="password1" >
         <br><br><br>
         <input  type="submit" class="btn btn-default" name="submit" value="Login">
       </div>
