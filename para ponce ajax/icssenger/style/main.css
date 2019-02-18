@@ -1,0 +1,17 @@
+.panel-body{
+    height:500px!important;
+}
+
+.jumbotron{
+    background-color:#337AB7;
+    color: whitesmoke;
+}
+
+.username{
+    background-color: #337AB7;
+    border: 0px;
+    font-size: 20px;
+}
+#panel {
+    overflow-y: scroll;
+  }
